@@ -1,0 +1,45 @@
+﻿<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header bg-info">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Company: {{requestedCompany.name}}</h2>
+        </div><!--end modal header-->
+
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <h2>XYZ<br /><small>Edit company information</small></h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4 ">
+                    <div class="panel panel-info">
+                        <div class="panel-body">
+                            <p>Company ID: </p>
+                            <input type="text" class="form-control" id="disabledInput" disabled="" value="{{requestedCompany.id}}" ng-model="editCompany.id"/>
+                            <p>Company Name: </p>
+                            <input type="text"  class="form-control" id="inputDefault" value="{{requestedCompany.name}}" ng-model="editCompany.name" />
+                            
+                            <p>Street address: </p>
+                            <input type="text" class="form-control" id="inputDefault" value="{{requestedCompany.streetAddress}}" ng-model="editCompany.streetAddress" />
+                            <p>Zip code: </p>
+                            <input type="number" min="10000" max="99999"  class="form-control" id="inputDefault" value="{{requestedCompany.zipCode}}" ng-model="editCompany.zipCode" />
+                            <p>City: </p>
+                            <input type="text" class="form-control" id="inputDefault" value="{{requestedCompany.city}}" ng-model="editCompany.city" />
+                            <p>Phone number: </p>
+                            <input type="text" class="form-control" id="inputDefault" value="{{requestedCompany.phoneNumber}}" ng-model="editCompany.phoneNumber" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end modal body-->
+        <div class="modal-footer bg-info">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateCompany()">Save</button>
+            <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+
+        </div><!--end modal footer-->
+    </div><!--end modal content-->
+</div><!--end modal dialog-->

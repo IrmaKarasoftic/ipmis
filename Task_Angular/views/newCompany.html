@@ -1,0 +1,21 @@
+﻿
+<div class="container-fluid">
+    <div class="form-style-6">
+        <ng-form class="panel-body" #id="newCompany">
+            <p>Name: </p>
+            <input type="text" class="form-control" ng-model="newCompany.name" />
+            <p>Street address: </p>
+            <input type="text" class="form-control"  ng-model="newCompany.streetAddress" />
+            <p>Zip code: </p>
+            <input type="number" class="form-control" ng-model="newCompany.zipCode" />
+            <p>City: </p>
+            <input type="text" class="form-control"  ng-model="newCompany.city" />
+            <p>Phone number: </p>
+            <input type="text" class="form-control" ng-model="newCompany.phoneNumber" />
+        </ng-form>
+    </div>
+    <div class="newCompanyButtons">
+        <a href="#/companies" class="btn btn-primary" ng-click="createNewCompany()">Save</a>
+        <a href="#/companies" class="btn btn-default">Cancel</a>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿<h2><i class="fa fa-building"></i>  Companies Management</h2>
+<br />
+<div ng-show="!waitCompanies">
+    <div class="companies">
+        <div class="panel panel-primary panel-horizontal" ng-repeat="company in companies">
+            <div class="panel-heading">
+                <h3 class="panel-title">Name: {{company.name}}</h3>
+            </div>
+            <div class="panel-body">
+                <p class="col-md-2" style="text-align:center"><b>Street address:</b> {{company.streetAddress}}</p>
+                <p class="col-md-1" style="text-align:center"><b>City:</b> {{company.city}}, {{company.zipCode}}</p>
+                <p class="col-md-2" style="text-align:center"><b>Phone number:</b> {{company.phoneNumber}}</p>
+
+                <p class="col-md-2" style="text-align:center">
+                    <button ng-hide="CompanyCheckRemove(company)" id="editBtn" class="btn btn-default btn-sm" data-toggle="modal" data-target="#editCompanyModal" ng-click="companyTransfer(company)"><i class="fa fa-pencil-square-o"></i></button>
+                    <button ng-hide="CompanyCheckRemove(company)" class="btn btn-default btn-sm" ng-click="CompanyRemoveOn(company)"><i class="fa fa-times"></i></button>
+
+                    <!--on remove-->
+                    <button ng-show="CompanyCheckRemove(company)" class="btn btn-danger" id="CompanyPanelButtons" ng-click="removeCompany()"><strong>Remove</strong></button>
+                    <button ng-show="CompanyCheckRemove(company)" class="btn btn-default" id="CompanyPanelButtons" ng-click="CompanyRemoveOff()"><strong>Cancel</strong></button>
+                    <!--end on remove-->
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-show="waitCompanies">
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Company Modal -->
+<div class="modal fade" id="editCompanyModal" role="dialog">
+    <div ng-include="'views/modals/editCompanyModal.html'"></div>
+</div><!--end modal-->

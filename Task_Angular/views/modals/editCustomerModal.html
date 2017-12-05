@@ -1,0 +1,40 @@
+﻿<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header bg-info">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">Customer: {{requestedCustomer.name}}</h2>
+        </div><!--end modal header-->
+
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <h2>XYZ<br /><small>Edit customer information</small></h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="panel panel-info" >
+                        <div class="panel-body">
+                            <p>Customer ID: </p>
+                            <input type="text" name="id" id="disabledInput" disabled="" value="{{requestedCustomer.id}}" ng-model="editCustomer.id" />
+                            <p>Customer Name: </p>
+                            <input type="text" name="name" class="form-control" id="inputDefault" value="{{requestedCustomer.name}}" ng-model="editCustomer.name" />
+                            <p>Select company: </p>
+
+                            <select style="font-size:16px" ng-options="company.id as company.name for company in companies" ng-model="editCustomer.company">
+                                <option>"Choose company"></option>
+                            </select><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--end modal body-->
+        <div class="modal-footer bg-info">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateCustomer()">Save</button>
+            <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+
+        </div><!--end modal footer-->
+    </div><!--end modal content-->
+</div><!--end modal dialog-->

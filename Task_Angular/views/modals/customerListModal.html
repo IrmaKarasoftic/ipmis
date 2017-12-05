@@ -1,0 +1,44 @@
+﻿<div class="modal-dialog modal-md">
+    <div class="modal-content">
+        <div class="modal-header bg-info">
+            <button type="button" class="close" data-dismiss="modal" ng-click="closeCustomerListModal()">&times;</button>
+            <h2 class="modal-title">Select Customer</h2>
+        </div><!--end modal header-->
+        <div class="modal-body" >
+
+            <table class="table table-hover">
+                <thead class="bg-primary">
+                    <tr>
+                        <th class="col-md-1"><h4>ID</h4></th>
+                        <th class="col-md-2"><h4>Name</h4></th>
+                        <th class="col-md-2"><h4>Company</h4></th>
+                        <th class="col-md-2"><h4>Company Address</h4></th>
+                        <th class="col-md-2"><h4>City, Zip</h4></th>
+                        <th class="col-md-2"><h4>Phone/Fax</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-if="billTo" ng-repeat="customer in customers | orderBy: '+name'" ng-click="customerTransferBillTo(customer)">
+                        <td class="col-md-1">{{customer.id}}</td>
+                        <td class="col-md-2">{{customer.name}}</td>
+                        <td class="col-md-2">{{customer.companyName}}</td>
+                        <td class="col-md-2">{{customer.streetAddress}}</td>
+                        <td class="col-md-2">{{customer.city}}, {{customer.zipCode}}</td>
+                        <td class="col-md-2">{{customer.phoneNumber}}</td>
+                    </tr>
+                    <tr ng-if="shipTo" ng-repeat="customer in customers | orderBy: '+name'" ng-click="customerTransferShipTo(customer)">
+                        <td class="col-md-1">{{customer.id}}</td>
+                        <td class="col-md-2">{{customer.name}}</td>
+                        <td class="col-md-2">{{customer.companyName}}</td>
+                        <td class="col-md-2">{{customer.streetAddress}}</td>
+                        <td class="col-md-2">{{customer.city}}, {{customer.zipCode}}</td>
+                        <td class="col-md-2">{{customer.phoneNumber}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!--end modal body-->
+        <div class="modal-footer bg-info">
+            <button class="btn btn-default" ng-click="closeCustomerListModal()">Close</button>
+        </div><!--end modal footer-->
+    </div><!--end modal content-->
+</div><!--end modal dialog-->

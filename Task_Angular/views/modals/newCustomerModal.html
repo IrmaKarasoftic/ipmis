@@ -1,0 +1,31 @@
+﻿<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header bg-info">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">XYZ<br /><small>Add new customer</small></h2>
+        </div><!--end modal header-->
+
+        <div class="modal-body">
+            <div class="container-fluid">
+
+                <div class="col-md-4 ">
+                    <div class="panel panel-info">
+                        <ng-form class="panel-body" id="badPadding">
+                            <p>Customer Name: </p>
+                            <input type="text" name="name" class="form-control" id="inputDefault" ng-model="newCustomer.name" placeholder="Customer name"  />
+                            <p>Select company:</p>
+
+                            <select style="font-size:16px" ng-options="company.id as company.name for company in companies" ng-model="newCustomer.company">
+                                <option value="">- - - Choose company - - - </option>
+                            </select>
+                        </ng-form>
+                    </div>
+                </div>
+            </div>
+        </div><!--end modal body-->
+        <div class="modal-footer bg-info">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="createNewCustomer()">Save</button>
+            <button class="btn btn-default" data-dismiss="modal" ng-click="cancelCustomer()">Cancel</button>
+        </div><!--end modal footer-->
+    </div><!--end modal content-->
+</div><!--end modal dialog-->

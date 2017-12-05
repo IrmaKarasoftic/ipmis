@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html ng-app="taskAngular">
+<head>
+    <meta charset="utf-8" />
+    <title>Task_Angular_Billing_App</title>
+    <base href="/">
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/chart.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrapYeti.css"S>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+    <link rel="stylesheet" href="css/toastr.css">
+
+
+    <!-- JS -->
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.min.js"></script>
+    <script src="libs/jquery-3.1.0.min.js"></script>
+  <script src="libs/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>
+    <!--ANGULAR APP-->
+    <script src="scripts/app.js"></script>
+    <!-- ANGULAR CONTROLLERS -->
+    <script src="scripts/controllers/homeCtrl.js"></script>
+    <script src="scripts/controllers/invoicesCtrl.js"></script>
+    <script src="scripts/controllers/newInvoiceCtrl.js"></script>
+    <script src="scripts/controllers/itemsCtrl.js"></script>
+    <script src="scripts/controllers/customersCtrl.js"></script>
+    <script src="scripts/controllers/companiesCtrl.js"></script>
+    <script src="scripts/controllers/emailCtrl.js"></script>
+
+
+    <script src="scripts/toastr.js"></script>
+    <script src="scripts/config/notifications-config.js"></script>
+
+    <!--ANGULAR SERVICES-->
+    <script src="scripts/services/dataService.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <!-- HEADER -->
+                <div class="page-header">
+                    <br />
+                    <br />
+                    <h1>XYZ Billing<br />
+                        <small>Quick Invoice Management Service</small>
+                    </h1>
+                </div>
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/home"><strong>Home</strong></a></li>
+                        <li><a href="#/invoices"><strong>Invoices</strong></a></li>
+                        <li><a href="#/customers"><strong>Customers</strong></a></li>
+                        <li><a href="#/items"><strong>Items</strong></a></li>
+                        <li class="dropdown">
+                            <a href="_top" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="font-weight:bold">Companies<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#/companies">View all companies</a></li>
+                                <li><a href="#/newCompany">Add a company</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- ANGULAR DYNAMIC CONTENT -->
+                <div ng-view></div>
+                <br>
+                <br>
+            </div><!-- End Col-->
+        </div><!-- End Row -->
+    </div><!--End Container-->
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿<div class="yearlyIncome" align="center">
+  <div ng-show="!showIncome">
+    <p><em>Yearly income is sum total of all paid invoices.</em></p>
+    <p><em>You can see your yearly income for past 5 years by clicking on this button!</em></p>
+    
+    <button class="btn btn-primary" ng-click="configureChart()">Show Income</button>
+  </div>
+  <div style="width: 700px; height: 600px" ng-show="showIncome">
+    <p><em><strong>Yearly Income</strong></em>
+    </p>
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
